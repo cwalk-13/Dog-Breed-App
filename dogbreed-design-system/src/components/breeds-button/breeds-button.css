@@ -1,3 +1,23 @@
 :host {
   display: block;
 }
+
+.btn {
+  background: var(#808080);
+  color: var(#F0F8FF);
+  border-radius: 4px;
+  border: none;
+  padding: 0 12px;
+  height: 38px;
+  outline: none;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background: var(#CD5C5C);
+}

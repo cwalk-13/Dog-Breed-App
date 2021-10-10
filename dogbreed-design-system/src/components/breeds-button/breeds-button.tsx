@@ -7,11 +7,19 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class BreedsButton {
 
+  getBreeds() {
+    return fetch('https://dog.ceo/api/breeds/list/all')
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        return res
+      })
+  }
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <button class= "btn" type = "button" onClick={() => this.getBreeds()}>
+        All Dog Breeds
+      </button>
     );
   }
 
