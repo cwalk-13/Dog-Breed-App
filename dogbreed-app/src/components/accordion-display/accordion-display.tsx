@@ -6,6 +6,7 @@ import { Component, Host, h, State, EventEmitter, Event, Prop } from '@stencil/c
   shadow: true,
 })
 export class AccordionDisplay {
+  // **ngFor="let item of list"
   @State() toggle: boolean = false;
 
   @Event() onToggle: EventEmitter;
