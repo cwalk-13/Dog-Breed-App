@@ -8,7 +8,7 @@ import { Component, Host, h } from '@stencil/core';
 export class BreedsButton {
 
   getBreeds() {
-    return fetch('https://dog.ceo/api/breeds/list/all')
+    return fetch('http://localhost:5000/')
     .then(res => res.json())
     .then(res => {
       console.log(res)

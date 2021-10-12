@@ -21,6 +21,7 @@ export class AppRoot {
             </stencil-route-switch>
           </stencil-router>
         </main>
+        <breeds-button></breeds-button>
       </div>
     );
   }
