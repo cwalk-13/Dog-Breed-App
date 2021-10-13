@@ -1,4 +1,4 @@
-import { Component, Host, h, State, EventEmitter, Event, Prop } from '@stencil/core';
+import { Component, h, State, EventEmitter, Event, Prop } from '@stencil/core';
 
 @Component({
   tag: 'accordion-display',
@@ -6,8 +6,10 @@ import { Component, Host, h, State, EventEmitter, Event, Prop } from '@stencil/c
   shadow: true,
 })
 export class AccordionDisplay {
-  // **ngFor="let item of list"
+
   @State() toggle: boolean = false;
+
+  @State() newImage: boolean = false;
 
   @Event() onToggle: EventEmitter;
 
@@ -23,9 +25,6 @@ export class AccordionDisplay {
     this.toggle = !this.toggle;
     this.onToggle.emit({ visible: this.toggle });
     console.log(this.breedURL);
-    if (this.toggle) {
-      this.getDog();
-    }
   }
 
   getDog() {
@@ -34,6 +33,7 @@ export class AccordionDisplay {
     .then(res => {
       console.log(res);
       this.image = res["message"];
+      this.newImage = !this.newImage;
       return res;
     })
   }
@@ -64,7 +64,8 @@ export class AccordionDisplay {
         <div class={`content-box ${this.toggle ? 'open' : 'close'}`}
           style={{width: this.width}}>
           <img src={`${this.image}`} width="400" height="400"></img>
-          {/* <dogbreed-button text="Share"></dogbreed-button> */}
+          <share-button image={`${this.image}`}></share-button>
+          <button class="btn" type = "button" onClick= {() => this.getDog()}>Next Image</button>
         </div>
       </div>
     )

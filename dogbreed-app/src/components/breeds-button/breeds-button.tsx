@@ -1,5 +1,4 @@
-import { Component, Host, h, EventEmitter, Event } from '@stencil/core';
-// import { EventEmitter } from 'puppeteer';
+import { Component, h, EventEmitter, Event } from '@stencil/core';
 
 @Component({
   tag: 'breeds-button',
@@ -13,17 +12,17 @@ export class BreedsButton {
     return fetch('http://localhost:5000/')
     .then(res => res.json())
     .then(res => {
-      // console.log(res);
+      console.log(res);
       this.breeds.emit(res);
       return res;
     })
   }
-render() {
-return (
-  <button class= "btn" type = "button" onClick={() => this.getBreeds()}>
-    All Dog Breeds
-  </button>
-);
-}
+  render() {
+  return (
+    <button class= "btn" type = "button" onClick={() => this.getBreeds()}>
+      All Dog Breeds
+    </button>
+  );
+  }
 
 }

@@ -23,6 +23,9 @@ export namespace Components {
     }
     interface BreedsButton {
     }
+    interface ShareButton {
+        "image": string;
+    }
 }
 declare global {
     interface HTMLAccordionDisplayElement extends Components.AccordionDisplay, HTMLStencilElement {
@@ -55,12 +58,19 @@ declare global {
         prototype: HTMLBreedsButtonElement;
         new (): HTMLBreedsButtonElement;
     };
+    interface HTMLShareButtonElement extends Components.ShareButton, HTMLStencilElement {
+    }
+    var HTMLShareButtonElement: {
+        prototype: HTMLShareButtonElement;
+        new (): HTMLShareButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "accordion-display": HTMLAccordionDisplayElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "breeds-button": HTMLBreedsButtonElement;
+        "share-button": HTMLShareButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -82,12 +92,16 @@ declare namespace LocalJSX {
     interface BreedsButton {
         "onBreeds"?: (event: CustomEvent<any>) => void;
     }
+    interface ShareButton {
+        "image"?: string;
+    }
     interface IntrinsicElements {
         "accordion-display": AccordionDisplay;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "breeds-button": BreedsButton;
+        "share-button": ShareButton;
     }
 }
 export { LocalJSX as JSX };
@@ -99,6 +113,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "breeds-button": LocalJSX.BreedsButton & JSXBase.HTMLAttributes<HTMLBreedsButtonElement>;
+            "share-button": LocalJSX.ShareButton & JSXBase.HTMLAttributes<HTMLShareButtonElement>;
         }
     }
 }

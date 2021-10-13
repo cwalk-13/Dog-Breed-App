@@ -47,7 +47,7 @@ export class AppRoot {
           <main>
           <breeds-button ></breeds-button>
           {this.breeds.map((breed) =>
-              <accordion-display  breedURL = {breed}></accordion-display>
+              <accordion-display  breedURL = {breed[0]} image = {breed[1]}></accordion-display>
             )}
           </main>
 
