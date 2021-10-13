@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
       for(var i in breedsDict) {
         if (breedsDict[i].length > 0) {
           for (var j in breedsDict[i]) {
-            breedName = i + "-" + breedsDict[i][j];
+            breedName = i + "/" + breedsDict[i][j];
             breeds.push(breedName);
           }
         }

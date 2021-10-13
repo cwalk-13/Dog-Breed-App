@@ -17,6 +17,7 @@ export class AppRoot {
     this.gotBreeds = true;
   }
 
+
   render() {
     if(!this.gotBreeds) {
       return (
@@ -49,6 +50,7 @@ export class AppRoot {
               <accordion-display  breedURL = {breed}></accordion-display>
             )}
           </main>
+
         </div>
       );
     }

@@ -22,7 +22,10 @@ export class AccordionDisplay {
   toggleComponent() {
     this.toggle = !this.toggle;
     this.onToggle.emit({ visible: this.toggle });
-    this.getDog();
+    console.log(this.breedURL);
+    if (this.toggle) {
+      this.getDog();
+    }
   }
 
   getDog() {
@@ -36,7 +39,7 @@ export class AccordionDisplay {
   }
 
   componentWillLoad() {
-    var slash = this.breedURL.indexOf('-');
+    var slash = this.breedURL.indexOf('/');
     if (slash == -1) {
       this.breedName = this.capitalize(this.breedURL)
     } else {
