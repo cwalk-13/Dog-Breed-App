@@ -13,7 +13,7 @@ export class AppRoot {
   @Listen('breeds', {target:'body'})
   breedsHandler(event:CustomEvent) {
     this.breeds = event.detail;
-    console.log(this.breeds);
+    // console.log(this.breeds);
     this.gotBreeds = true;
   }
 
