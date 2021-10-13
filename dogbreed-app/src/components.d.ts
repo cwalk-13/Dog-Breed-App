@@ -9,7 +9,7 @@ import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AccordionDisplay {
         "breedName": string;
-        "color": string;
+        "breedURL": string;
         "image": string;
         "width": string;
     }
@@ -19,6 +19,7 @@ export namespace Components {
         "match": MatchResults;
     }
     interface AppRoot {
+        "breeds": [string];
     }
     interface BreedsButton {
     }
@@ -65,7 +66,7 @@ declare global {
 declare namespace LocalJSX {
     interface AccordionDisplay {
         "breedName"?: string;
-        "color"?: string;
+        "breedURL"?: string;
         "image"?: string;
         "onOnToggle"?: (event: CustomEvent<any>) => void;
         "width"?: string;
@@ -76,8 +77,10 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface AppRoot {
+        "breeds"?: [string];
     }
     interface BreedsButton {
+        "onBreeds"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "accordion-display": AccordionDisplay;
