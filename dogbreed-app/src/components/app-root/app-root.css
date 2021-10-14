@@ -13,3 +13,10 @@ h1 {
   color: #fff;
   padding: 0 12px;
 }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgb(12, 12, 12);
+  padding: 0 12px;
+}

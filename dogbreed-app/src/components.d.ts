@@ -12,6 +12,8 @@ export namespace Components {
         "image": string;
     }
     interface AppRoot {
+        "breedImage": string;
+        "breedName": string;
         "breeds": [string];
     }
     interface BreedsButton {
@@ -60,6 +62,8 @@ declare namespace LocalJSX {
         "onOnToggle"?: (event: CustomEvent<any>) => void;
     }
     interface AppRoot {
+        "breedImage"?: string;
+        "breedName"?: string;
         "breeds"?: [string];
     }
     interface BreedsButton {
