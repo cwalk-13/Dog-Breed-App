@@ -1,6 +1,6 @@
 # Dog-Breed-App
 #### This web app allows a user to view a list of dog breeds and images pulle from the Dog CEO API (https://dog.ceo/dog-api/documentation/). This project uses the Stencil starter app which is an app comprised of custom Stencil components. Node.js and Express were used for backend development.
----
+
 ## Installation Steps:
 * Clone the repository
 * CD into the "dogbreed-app" directory and run this command to install dependencies:
