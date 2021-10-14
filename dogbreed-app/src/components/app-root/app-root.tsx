@@ -1,3 +1,8 @@
+/*
+Charles Walker
+app-root.tsx
+This component is the main page of the app where the breeds-button and accordion displays are rendered
+*/
 import { Component, h, Listen, Prop, State} from '@stencil/core';
 
 @Component({
@@ -13,7 +18,6 @@ export class AppRoot {
   @Listen('breeds', {target:'body'})
   breedsHandler(event:CustomEvent) {
     this.breeds = event.detail;
-    // console.log(this.breeds);
     this.gotBreeds = true;
   }
 
@@ -25,16 +29,9 @@ export class AppRoot {
           <header>
             <h1>Stencil App Starter</h1>
           </header>
-
           <main>
-            {/* <stencil-router>
-              <stencil-route-switch scrollTopOffset={0}>
-                <stencil-route url="/" component="app-home" exact={true} />
-                <stencil-route url="/profile/:name" component="app-profile" />
-              </stencil-route-switch>
-            </stencil-router> */}
-          </main>
           <breeds-button ></breeds-button>
+          </main>
         </div>
       );
     } else {
@@ -43,14 +40,12 @@ export class AppRoot {
           <header>
             <h1>Stencil App Starter</h1>
           </header>
-
           <main>
           <breeds-button ></breeds-button>
           {this.breeds.map((breed) =>
               <accordion-display  breedURL = {breed[0]} image = {breed[1]}></accordion-display>
             )}
           </main>
-
         </div>
       );
     }

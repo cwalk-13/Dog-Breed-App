@@ -1,3 +1,8 @@
+/*
+Charles Walker
+breeds-button.tsx
+This component is a button that calls the api to recieve the list of dog breeds
+*/
 import { Component, h, EventEmitter, Event } from '@stencil/core';
 
 @Component({
@@ -12,7 +17,6 @@ export class BreedsButton {
     return fetch('http://localhost:5000/')
     .then(res => res.json())
     .then(res => {
-      console.log(res);
       this.breeds.emit(res);
       return res;
     })

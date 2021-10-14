@@ -1,3 +1,8 @@
+/*
+Charles Walker
+accordion-display.tsx
+This component is an accordion display that displays the dog breed name, image, share button, and next image button
+*/
 import { Component, h, State, EventEmitter, Event, Prop } from '@stencil/core';
 
 @Component({
@@ -24,14 +29,12 @@ export class AccordionDisplay {
   toggleComponent() {
     this.toggle = !this.toggle;
     this.onToggle.emit({ visible: this.toggle });
-    console.log(this.breedURL);
   }
 
   getDog() {
-    return fetch(`http://localhost:5000/${this.breedURL}`)
+    return fetch(`https://dog.ceo/api/breed/${this.breedURL}/images/random`)
     .then(res => res.json())
     .then(res => {
-      console.log(res);
       this.image = res["message"];
       this.newImage = !this.newImage;
       return res;
