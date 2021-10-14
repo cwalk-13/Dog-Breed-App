@@ -3,7 +3,7 @@ Charles Walker
 app-root.tsx
 This component is a button that allows the user to share the picture of a dog through facebook
 */
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'share-button',

@@ -20,11 +20,9 @@ export class AccordionDisplay {
 
   @Prop() breedURL: string;
 
-  @Prop() breedName: string;
+  @Prop({ mutable: true }) breedName: string;
 
-  @Prop() image: string;
-
-  @Prop() width: string;
+  @Prop({ mutable: true }) image: string;
 
   toggleComponent() {
     this.toggle = !this.toggle;
@@ -59,15 +57,13 @@ export class AccordionDisplay {
     return (
       <div>
         <button class="accordion"
-          style={{width: this.width}}
           onClick={() => this.toggleComponent()}>
           {this.breedName}
           {this.toggle ? <span>&#9650;</span> : <span>&#9660;</span>}
         </button>
-        <div class={`content-box ${this.toggle ? 'open' : 'close'}`}
-          style={{width: this.width}}>
-          <img src={`${this.image}`} width="400" height="400"></img>
-          <share-button image={`${this.image}`}></share-button>
+        <div class={`content-box ${this.toggle ? 'open' : 'close'}`}>
+          <img src={this.image} width="400" height="400"></img>
+          <share-button image={this.image}></share-button>
           <button class="btn" type = "button" onClick= {() => this.getDog()}>Next Image</button>
         </div>
       </div>

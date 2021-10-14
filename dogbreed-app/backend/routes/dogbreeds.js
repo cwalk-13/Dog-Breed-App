@@ -5,7 +5,6 @@ This file contains the api routes that call the Dog CEO API
 */
 const express = require('express');
 const router = express.Router()
-var request = require('request');
 var cors = require('cors');
 const fetch = require('node-fetch');
 router.use(cors());

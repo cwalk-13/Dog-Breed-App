@@ -11,7 +11,7 @@ import { Component, h, Listen, Prop, State} from '@stencil/core';
   shadow: true,
 })
 export class AppRoot {
-  @Prop() breeds: [string];
+  @Prop({ mutable: true }) breeds: [string];
 
   @State() gotBreeds: boolean = false;
 
@@ -27,7 +27,7 @@ export class AppRoot {
       return (
         <div>
           <header>
-            <h1>Stencil App Starter</h1>
+            <h1>Dog Breeds</h1>
           </header>
           <main>
           <breeds-button ></breeds-button>
@@ -38,7 +38,7 @@ export class AppRoot {
       return (
         <div>
           <header>
-            <h1>Stencil App Starter</h1>
+            <h1>Dog Breeds</h1>
           </header>
           <main>
           <breeds-button ></breeds-button>

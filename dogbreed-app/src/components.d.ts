@@ -5,18 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AccordionDisplay {
         "breedName": string;
         "breedURL": string;
         "image": string;
-        "width": string;
-    }
-    interface AppHome {
-    }
-    interface AppProfile {
-        "match": MatchResults;
     }
     interface AppRoot {
         "breeds": [string];
@@ -33,18 +26,6 @@ declare global {
     var HTMLAccordionDisplayElement: {
         prototype: HTMLAccordionDisplayElement;
         new (): HTMLAccordionDisplayElement;
-    };
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
-    }
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
-    };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-    }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -66,8 +47,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "accordion-display": HTMLAccordionDisplayElement;
-        "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "breeds-button": HTMLBreedsButtonElement;
         "share-button": HTMLShareButtonElement;
@@ -79,12 +58,6 @@ declare namespace LocalJSX {
         "breedURL"?: string;
         "image"?: string;
         "onOnToggle"?: (event: CustomEvent<any>) => void;
-        "width"?: string;
-    }
-    interface AppHome {
-    }
-    interface AppProfile {
-        "match"?: MatchResults;
     }
     interface AppRoot {
         "breeds"?: [string];
@@ -97,8 +70,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "accordion-display": AccordionDisplay;
-        "app-home": AppHome;
-        "app-profile": AppProfile;
         "app-root": AppRoot;
         "breeds-button": BreedsButton;
         "share-button": ShareButton;
@@ -109,8 +80,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "accordion-display": LocalJSX.AccordionDisplay & JSXBase.HTMLAttributes<HTMLAccordionDisplayElement>;
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "breeds-button": LocalJSX.BreedsButton & JSXBase.HTMLAttributes<HTMLBreedsButtonElement>;
             "share-button": LocalJSX.ShareButton & JSXBase.HTMLAttributes<HTMLShareButtonElement>;
