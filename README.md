@@ -3,10 +3,11 @@
 ---
 ## Installation Steps:
 * Clone the repository
-* CD into the "dogbreed-app" directory and run the command:
+* CD into the "dogbreed-app" directory and run this command to install dependencies:
 ```bash
 npm install
 ```
+* The same may need to be done in the "backend" directory
 * You may have to close and reopen the environment to register the changes
 * While in the "dogbreed-app" directory, run the command:
 ```bash
